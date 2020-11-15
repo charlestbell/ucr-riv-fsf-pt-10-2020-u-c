@@ -1,5 +1,5 @@
 // A variable declared in global scope is available to all functions
-var hello = "Hello"; 
+var hello = 'Hello';
 
 function sayHello() {
   console.log(hello);
@@ -15,21 +15,22 @@ sayHello();
 sayHelloAgain();
 
 //A variable declared in local scope is only available to that function
-function sayGoodbye() { 
-  var goodbye = "Goodbye";
+function sayGoodbye() {
+  var goodbye = 'Goodbye';
   console.log(goodbye);
   return;
 }
 
 //This will throw an error
-var sayGoodbyeAgain = function () { 
+var sayGoodbyeAgain = function () {
   console.log(goodbye);
   return;
 };
 
+
 // Shadowing happens when the same variable is used in the local and global scope
-var shadow = "Hello";
- console.log(shadow);
+var shadow = 'Hello';
+console.log(shadow);
 
 // Logs "Hello"
 function sayWhat() {
@@ -39,8 +40,8 @@ function sayWhat() {
 
 //Logs "Goodbye"
 var sayWhatAgain = function () {
-  var shadow = "Goodbye";
-  console.log(shadow);   
+  var shadow = 'Goodbye';
+  console.log(shadow);
 };
 
 sayGoodbye();
