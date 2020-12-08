@@ -140,7 +140,7 @@ var listOfAnimals = ['Cat', 'Dog', 'Alpaca', 'Hedgehog'];
 
 for (let i = 0; i < listOfAnimals.length; i++) {
   // Each time through the loop, set a var to hold the current animal...
-  const animal = listOfAnimals[i];
+  var animal = listOfAnimals[i];
 
   // ...Create the element
   var animalHeading = document.createElement('h4');
