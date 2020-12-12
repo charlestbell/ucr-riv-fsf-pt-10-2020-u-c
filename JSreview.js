@@ -151,3 +151,24 @@ for (let i = 0; i < listOfAnimals.length; i++) {
   // Add it to the page (remember, we assigned textContainer on line 122)
   textContainer.append(animalHeading);
 }
+
+/**
+ * * CALL THIRD-PARTY APIs with jQuery
+ */
+
+// Use AJAX to call a third-party API -- request some information from a server
+
+// THIS RELIES ON JQUERY...and the version of jQuery that Bootstrap includes
+// does not include AJAX. Google 'jQuery CDN' to get a link to the full version of jQuery.
+$.ajax({
+  url: '<SOME URL TO CALL>',
+  method: 'GET',
+  error: function (error) {
+    // This function runs if the request is not successful
+  },
+}).then(function (response) {
+  // Code that runs AFTER the API has responded and the request was successful
+
+  // The response will be available as an argument on this function
+  console.log(response);
+});
