@@ -124,3 +124,5 @@ Each member is required to submit the following:
 * The URL of the deployed application.
 
 * The URL of the GitHub repository.
+
+* A brief description of how you contributed to your team's project. Add this as a note in BCS when you submit the links above. You can omit this if you have one or more commits on your team's main/master branch
