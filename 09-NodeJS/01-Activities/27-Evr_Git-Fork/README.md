@@ -19,7 +19,7 @@ In this activity we will be using a test repository to help you grasp the fork a
 4. Clone the repository to your local machine and move into that directory
 
     ```sh
-    git@github.com:coding-boot-camp/forking-tutorial.git && cd forking-tutorial
+    git clone git@github.com:coding-boot-camp/forking-tutorial.git && cd forking-tutorial
     ```
 
 5. Run the following command to see that the remote URL for the repository is set to your own personal Github
