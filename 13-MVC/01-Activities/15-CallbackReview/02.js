@@ -6,4 +6,4 @@ const addCallBacks = (functionOne, functionTwo) =>
   functionOne(6, 2) + functionTwo(6, 3);
 
 // What does this return?
-addCallBacks(multiply, sum);
+console.log(addCallBacks(multiply, sum));
