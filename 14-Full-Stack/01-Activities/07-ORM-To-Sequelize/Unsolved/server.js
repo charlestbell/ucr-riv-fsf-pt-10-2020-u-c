@@ -1,4 +1,7 @@
-const express = require('express');
+const express = require("express");
+const db = require("./models");
+
+db.sequelize.sync();
 
 // Sets up the Express App
 const app = express();
@@ -9,10 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // Routes
-require('./routes/api-routes.js')(app);
+require("./routes/api-routes.js")(app);
 
 // Starting our Express app
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));

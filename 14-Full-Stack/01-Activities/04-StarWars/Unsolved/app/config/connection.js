@@ -3,17 +3,17 @@
 // *********************************************************************************
 
 // Requiring mysql package
-const mysql = require('mysql');
+const mysql = require("mysql");
 
 // Setting up our connection information
 const source = {
   localhost: {
-    host: 'localhost',
+    host: "localhost",
     port: 3306,
-    user: 'root',
+    user: "root",
     // Be sure to update with your own MySQL Password!
-    password: '',
-    database: 'starwars',
+    password: "222rangerGreen",
+    database: "starwars",
   },
 };
 

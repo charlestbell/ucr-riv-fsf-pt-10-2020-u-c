@@ -4,12 +4,21 @@
 
   ```
   	- Answer: What is Sequelize?
+-- A node, promise based ORM for SQL in it's many flavors
 
   	- Answer: What advantages does it offer?
 
+	-- Familiar javascript syntax, makes complicated sql actions easier, easy to test. Query syntax is more managable.
+
   	- Answer: How do I install it? How do I incorporate it into my app?
 
+	  -- npm i -g sequalize-cli
+	  -- npm i sequalize
+	  -- sequelize init
+
   	- Answer: What the heck is a Sequelize model? What role will it play?
+
+	  -- The javascript representation of a table schema.
 
   	- Answer: Let's say I have the below table in MySQL. 
 

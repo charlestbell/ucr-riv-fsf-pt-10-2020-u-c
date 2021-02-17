@@ -1,4 +1,4 @@
-* Folder: `08-Sequelize-Create-Read/Unsolved`
+* ~~Folder: `08-Sequelize-Create-Read/Unsolved`~~
 
 * INSTRUCTIONS:
 

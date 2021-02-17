@@ -1,3 +1,5 @@
+USE chirpy;
+
 insert into chirps (id, author, chirp) values (1, 'Tersina Kilminster', 'nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros');
 insert into chirps (id, author, chirp) values (2, 'Lindsay Kunz', 'odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis');
 insert into chirps (id, author, chirp) values (3, 'Allie Fairburne', 'maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum');
