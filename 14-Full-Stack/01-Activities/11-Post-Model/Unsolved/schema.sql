@@ -2,3 +2,8 @@
 DROP DATABASE IF EXISTS blogger;
 -- Creates the "blogger" database --
 CREATE DATABASE blogger;
+
+USE blogger;
+
+SELECT *	
+FROM blogger;
