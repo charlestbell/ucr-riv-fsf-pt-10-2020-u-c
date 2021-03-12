@@ -1,4 +1,4 @@
-# Unit 16 Project 2 Homework: Professional Materials
+ee# Unit 16 Project 2 Homework: Professional Materials
 
 Now that you've built a full-stack web application and have another project to share, you'll be updating your portfolio page and other materials to build toward being employer-competitive.
 
@@ -28,10 +28,14 @@ If you are opting out of career services, this is *still a required assignment*.
 
 ## Instructions
 
-1. [Updated Portfolio](#updated-portfolio)
-2. [GitHub Profile](#updated-github-profile)
-3. [Updated Resume](#updated-resume)
-4. [Updated LinkedIn](#updated-linkedin)
+- [Requirements](#requirements)
+- [Grading](#grading)
+- [Instructions](#instructions)
+  - [Updated Portfolio](#updated-portfolio)
+  - [Design](#design)
+  - [Updated GitHub Profile](#updated-github-profile)
+  - [Updated Resume](#updated-resume)
+  - [Updated LinkedIn](#updated-linkedin)
 
 ### Updated Portfolio
 
