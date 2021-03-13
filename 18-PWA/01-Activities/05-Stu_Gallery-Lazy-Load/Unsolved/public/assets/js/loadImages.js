@@ -9,13 +9,29 @@ function createEl(htmlString = "", className) {
 }
 
 function initLazyImages() {
-  // Enter your lazy loading code here
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((items, observer) => {
+      items.forEach((item) => {
+        if (item.isIntersecting) {
+          loadImages(item.target);
+          observer.unobserve(item.target);
+        }
+      });
+    });
+    imagesToLoad.forEach((img) => {
+      observer.observe(img);
+    });
+  } else {
+    imagesToLoad.forEach((img) => {
+      loadImages(img);
+    });
+  }
 }
 
 function loadImages() {
   fetch("/api/images")
-    .then(res => res.json())
-    .then(data => createCards(data))
+    .then((res) => res.json())
+    .then((data) => createCards(data))
     .then(() => initLazyImages());
 }
 
@@ -25,7 +41,7 @@ function createCards(data) {
   let lastRow;
   const row = createEl("div", "row");
 
-  return data.forEach(function(image, index) {
+  return data.forEach(function (image, index) {
     const col = createEl("div", "col-md-4 mt-4");
     col.appendChild(createCard(image));
     if (index % 3 === 0) {
@@ -42,13 +58,17 @@ function createCard(image) {
   const card = createEl("div", "card");
   const imageContainer = createEl("div", "card__image-container");
   const img = createEl("img", "card-img-top card__image--cover");
+
   // Enter your additional code here
   img.setAttribute("src", image.image);
   img.setAttribute("alt", image.description);
 
   const cardBody = createEl("div", "card-body");
 
-  const ratingFormContainer = createEl("div", "rating d-flex justify-content-start");
+  const ratingFormContainer = createEl(
+    "div",
+    "rating d-flex justify-content-start"
+  );
   ratingFormContainer.setAttribute("data-id", image._id);
   ratingFormContainer.setAttribute("data-rating", image.rating);
 
@@ -74,7 +94,7 @@ function createRatingForm(image) {
     2: "Two Stars",
     3: "Three Stars",
     4: "Four Stars",
-    5: "Five Stars"
+    5: "Five Stars",
   };
 
   const form = createEl("form");
@@ -109,9 +129,9 @@ function updateRating(event) {
     method: "PUT",
     body: JSON.stringify({ rating }),
     headers: {
-      "Content-Type": "application/json"
-    }
-  }).then(function() {
+      "Content-Type": "application/json",
+    },
+  }).then(function () {
     loadImages();
   });
 }
