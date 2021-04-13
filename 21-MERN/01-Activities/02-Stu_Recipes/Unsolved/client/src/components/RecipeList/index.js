@@ -16,18 +16,19 @@ export function RecipeListItem(props) {
       <Container>
         <Row>
           <Col size="xs-4 sm-2">
-            <Thumbnail src="http://img.recipepuppy.com/560556.jpg" />
+            <Thumbnail src={props.recipe.thumbnail} />
           </Col>
           <Col size="xs-8 sm-9">
-            <h3>Vegetable-Pasta Oven Omelet</h3>
+            <h3>{props.recipe.title}</h3>
             <p>
-              Ingredients: "tomato, onions, red pepper, garlic, olive oil, zucchini, cream cheese,
-              vermicelli, eggs, parmesan cheese, milk, italian seasoning, salt, black pepper"
+              {props.recipe.ingredients.map((ingredient) => (
+                <span key={ingredient}> {ingredient},</span>
+              ))}
             </p>
             <a
               rel="noreferrer noopener"
               target="_blank"
-              href="http://find.myrecipes.com/recipes/recipefinder.dyn?action=displayRecipe&recipe_id=520763"
+              href={props.recipe.href}
             >
               Go to recipe!
             </a>

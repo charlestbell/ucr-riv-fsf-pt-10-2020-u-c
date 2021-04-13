@@ -8,26 +8,25 @@ import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
 
 function App() {
-
   const [recipes, setRecipes] = useState([]);
   const [recipeSearch, setRecipeSearch] = useState("");
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     // Destructure the name and value properties off of event.target
     // Update the appropriate state
     const { value } = event.target;
     setRecipeSearch(value);
   };
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
     API.getRecipes(recipeSearch)
-      .then(res => {
-        console.log(res.data)
-        setRecipes(res.data)
+      .then((res) => {
+        console.log(res.data);
+        setRecipes(res.data);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -54,7 +53,7 @@ function App() {
                       type="success"
                       className="input-lg"
                     >
-                        Search
+                      Search
                     </Button>
                   </Col>
                 </Row>
@@ -64,13 +63,19 @@ function App() {
         </Row>
         <Row>
           <Col size="xs-12">
-            <h1>Render Recipes Here</h1>
+            <RecipeList>
+              {recipes.map((recipe) => (
+                <RecipeListItem
+                  recipe={recipe}
+                  key={recipe._id}
+                ></RecipeListItem>
+              ))}
+            </RecipeList>
           </Col>
         </Row>
       </Container>
     </div>
   );
 }
-
 
 export default App;
